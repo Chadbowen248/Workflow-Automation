@@ -1,0 +1,14 @@
+#!/bin/bash 
+# My first  script
+
+cd /home/chad/work
+echo -n "Good sir, where shall these files go? > "
+read userfolder
+echo "As you wish my lord"
+mkdir $userfolder
+#cd $userfolder
+cp -r /home/chad/Templates/html5/* $userfolder
+cd $userfolder
+gnome-open $PWD/
+firefox index.html http://getbootstrap.com/2.3.2/getting-started.html#examples 2>/dev/null &
+sublime_text index.html 2>/dev/null &
