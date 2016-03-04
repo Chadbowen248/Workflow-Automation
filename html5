@@ -1,11 +1,25 @@
 #!/bin/bash 
 # My first  script
 
+# Change to work folder and create new folder based on arg1
+
 cd /home/chad/work
 mkdir $1
-cp -r /home/chad/Templates/html5/* $1
 cd $1
+
+
+# Check to see if git is wanted
+
+if [[ -n "$2" ]]; then
+	git init
+else
+	echo "no git for you"
+
+fi
+cp -r /home/chad/Templates/html5/* $PWD
 gnome-open $PWD/
 firefox index.html http://getbootstrap.com/2.3.2/getting-started.html#examples 2>/dev/null &
 vim index.html 
+
+
 
